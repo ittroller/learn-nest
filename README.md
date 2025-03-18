@@ -1,98 +1,62 @@
-<p align="center">
-  <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo-small.svg" width="120" alt="Nest Logo" /></a>
-</p>
+<h1> Read me Learn NEST.JS </h1>
 
-[circleci-image]: https://img.shields.io/circleci/build/github/nestjs/nest/master?token=abc123def456
-[circleci-url]: https://circleci.com/gh/nestjs/nest
+## **Install:**
 
-  <p align="center">A progressive <a href="http://nodejs.org" target="_blank">Node.js</a> framework for building efficient and scalable server-side applications.</p>
-    <p align="center">
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/v/@nestjs/core.svg" alt="NPM Version" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/l/@nestjs/core.svg" alt="Package License" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/dm/@nestjs/common.svg" alt="NPM Downloads" /></a>
-<a href="https://circleci.com/gh/nestjs/nest" target="_blank"><img src="https://img.shields.io/circleci/build/github/nestjs/nest/master" alt="CircleCI" /></a>
-<a href="https://discord.gg/G7Qnnhy" target="_blank"><img src="https://img.shields.io/badge/discord-online-brightgreen.svg" alt="Discord"/></a>
-<a href="https://opencollective.com/nest#backer" target="_blank"><img src="https://opencollective.com/nest/backers/badge.svg" alt="Backers on Open Collective" /></a>
-<a href="https://opencollective.com/nest#sponsor" target="_blank"><img src="https://opencollective.com/nest/sponsors/badge.svg" alt="Sponsors on Open Collective" /></a>
-  <a href="https://paypal.me/kamilmysliwiec" target="_blank"><img src="https://img.shields.io/badge/Donate-PayPal-ff3f59.svg" alt="Donate us"/></a>
-    <a href="https://opencollective.com/nest#sponsor"  target="_blank"><img src="https://img.shields.io/badge/Support%20us-Open%20Collective-41B883.svg" alt="Support us"></a>
-  <a href="https://twitter.com/nestframework" target="_blank"><img src="https://img.shields.io/twitter/follow/nestframework.svg?style=social&label=Follow" alt="Follow us on Twitter"></a>
-</p>
-  <!--[![Backers on Open Collective](https://opencollective.com/nest/backers/badge.svg)](https://opencollective.com/nest#backer)
-  [![Sponsors on Open Collective](https://opencollective.com/nest/sponsors/badge.svg)](https://opencollective.com/nest#sponsor)-->
+Check Nodejs version trước
 
-## Description
+Có thể chọn platform build source:
 
-[Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
+- platform-express (mặc định)
 
-## Project setup
+- platform-fastify
 
-```bash
-$ yarn install
-```
+`npm i -g @nestjs/cli`
 
-## Compile and run the project
+Cú pháp tạo dự án:
 
-```bash
-# development
-$ yarn run start
+`nest new <project-name> --package-manager npm --language ts --template graphql`
 
-# watch mode
-$ yarn run start:dev
+Ví dụ: `nest new my-graphql-app --template graphql`
 
-# production mode
-$ yarn run start:prod
-```
+Ngắn gọn hơn: `nest new project-name`
 
-## Run tests
+## **Learn:**
 
-```bash
-# unit tests
-$ yarn run test
+### 1. NestJS CLI command:
 
-# e2e tests
-$ yarn run test:e2e
+- Tạo resource: `nest generate resource <module-name>`
 
-# test coverage
-$ yarn run test:cov
-```
+  _Sẽ xuất hiện các tùy chọn để tạo ra 1 cụm file router/controller/module/service, folder entities/dto (có thể dùng từ viết tắt để lượt bỏ quá trình chọn)_
 
-## Deployment
+- Tạo module (1 file .module.ts - quản lý cấu hình module): `nest generate module <module-name>` === `nest g mo <module-name>`
 
-When you're ready to deploy your NestJS application to production, there are some key steps you can take to ensure it runs as efficiently as possible. Check out the [deployment documentation](https://docs.nestjs.com/deployment) for more information.
+- Tạo controller (1 file .controller.ts - đăng ký các controller trong module): `nest generate controller <module-name>` === `nest g co <module-name>`
 
-If you are looking for a cloud-based platform to deploy your NestJS application, check out [Mau](https://mau.nestjs.com), our official platform for deploying NestJS applications on AWS. Mau makes deployment straightforward and fast, requiring just a few simple steps:
+- Tạo service (1 file .service.ts - tạo các service theo các hàm trong controller): `nest generate service <module-name>` === `nest g s <module-name>`
 
-```bash
-$ yarn install -g mau
-$ mau deploy
-```
+- Tạo provider (1 file .ts - có thể là service, repository hoặc một helper function): `nest generate provider <module-name>` === `nest g pr <module-name>`
 
-With Mau, you can deploy your application in just a few clicks, allowing you to focus on building features rather than managing infrastructure.
+- Tạo middleware (1 file .middleware.ts): `nest generate middleware <module-name>` === `nest g mi <module-name>`
 
-## Resources
+- Tạo interceptor (1 file .interceptor.ts - để can thiệp vào request hoặc response): `nest generate interceptor <module-name>`
 
-Check out a few resources that may come in handy when working with NestJS:
+- Tạo guard (1 file .guard.ts - để kiểm soát quyền truy cập): `nest generate guard <module-name>` === `nest g gu <module-name>`
 
-- Visit the [NestJS Documentation](https://docs.nestjs.com) to learn more about the framework.
-- For questions and support, please visit our [Discord channel](https://discord.gg/G7Qnnhy).
-- To dive deeper and get more hands-on experience, check out our official video [courses](https://courses.nestjs.com/).
-- Deploy your application to AWS with the help of [NestJS Mau](https://mau.nestjs.com) in just a few clicks.
-- Visualize your application graph and interact with the NestJS application in real-time using [NestJS Devtools](https://devtools.nestjs.com).
-- Need help with your project (part-time to full-time)? Check out our official [enterprise support](https://enterprise.nestjs.com).
-- To stay in the loop and get updates, follow us on [X](https://x.com/nestframework) and [LinkedIn](https://linkedin.com/company/nestjs).
-- Looking for a job, or have a job to offer? Check out our official [Jobs board](https://jobs.nestjs.com).
+- Tạo pipe (1 file .pipe.ts - để xử lý dữ liệu đầu vào): `nest generate pipe <module-name>` === `nest g pi <module-name>`
 
-## Support
+### 2. Controller:
 
-Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
-
-## Stay in touch
-
-- Author - [Kamil Myśliwiec](https://twitter.com/kammysliwiec)
-- Website - [https://nestjs.com](https://nestjs.com/)
-- Twitter - [@nestframework](https://twitter.com/nestframework)
-
-## License
-
-Nest is [MIT licensed](https://github.com/nestjs/nest/blob/master/LICENSE).
+| Nest                        | ExporessJS                      |
+| :-------------------------- | :------------------------------ |
+| @Request(), @Req()          | req                             |
+| @Response(), @Res()\*       | res                             |
+| @Next()                     | next                            |
+| @Session()                  | req.session                     |
+| @Param(key?: string)        | req.params / req.params[key]    |
+| @Body(key?: string)         | req.body / req.body[key]        |
+| @Query(key?: string)        | req.query / req.query[key]      |
+| @Headers(name?: string)     | req.headers / req.headers[name] |
+| @Ip()                       | req.ip                          |
+| @HostParam()                | req.hosts                       |
+| @HttpCode(<number>)         | res.status(<number>)            |
+| @Header('<key>', '<value>') | Header.<key> = <value>          |
