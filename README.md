@@ -22,7 +22,7 @@ Ngắn gọn hơn: `nest new project-name`
 
 ## **Learn:**
 
-### 1. NestJS CLI command:
+### NestJS CLI command:
 
 - Tạo resource: `nest generate resource <module-name>`
 
@@ -44,7 +44,53 @@ Ngắn gọn hơn: `nest new project-name`
 
 - Tạo pipe (1 file .pipe.ts - để xử lý dữ liệu đầu vào): `nest generate pipe <module-name>` === `nest g pi <module-name>`
 
-### 2. Controller:
+### Config
+
+- **Cài đặt các thư viện**
+
+  `@nestjs/config` : config mở rộng
+
+  `typeorm @nestjs/typeorm` : config database
+
+- **Absolute path:**
+
+  - Tùy chỉnh `ts.config.json`
+
+    ```json
+    "baseUrl": "./",
+    "paths": {
+      "@src/*": ["src/*"]
+    },
+    ```
+
+  - Tùy chỉnh `eslint.config.mjs`
+
+    ```mjs
+    settings: {
+      'import/resolver': {
+        typescript: {
+          project: './tsconfig.json',
+        },
+      },
+    },
+    ```
+
+  - Tùy chỉnh `jest-e2e.json`
+
+    ```json
+    "moduleNameMapper": {
+      "@src/(.*)": "<rootDir>/src/$1"
+    }
+    ```
+
+  - Tùy chỉnh config ở vscode setting:
+
+    ```json
+    "typescript.preferences.importModuleSpecifier": "non-relative",
+    "javascript.preferences.importModuleSpecifier": "non-relative"
+    ```
+
+### 1. Controller:
 
 | Nest                        | ExporessJS                      |
 | :-------------------------- | :------------------------------ |
